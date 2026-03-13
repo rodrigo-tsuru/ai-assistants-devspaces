@@ -1,0 +1,18 @@
+apiVersion: 1.0.0
+metadata:
+  name: ai-assistants-devspace
+components:
+  - name: tools
+    container:
+      image: quay.io/devfile/universal-developer-image:latest
+      memoryLimit: 4096Mi
+      mountSources: true
+commands:
+  - id: install-claude
+    exec:
+      component: tools
+      commandLine: npm install -g @anthropic-ai/claude-code
+      workingDir: $PROJECTS_ROOT
+events:
+  postStart:
+    - install-claude
