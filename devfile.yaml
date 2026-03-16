@@ -16,3 +16,12 @@ commands:
 events:
   postStart:
     - install-claude
+attributes:
+  .vscode/extensions.json: |
+    {
+      "recommendations": [
+        "redhat.java",
+        "redhat.vscode-yaml",
+        "telefonica-vivo-devops-brasil.hercules-agent-skills-extension"
+      ]
+    }
