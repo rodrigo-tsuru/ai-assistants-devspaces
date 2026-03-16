@@ -13,9 +13,15 @@ commands:
       component: tools
       commandLine: npm install -g @anthropic-ai/claude-code
       workingDir: $PROJECTS_ROOT
+  - id: install-gh-copilot
+    exec:
+      component: tools
+      commandLine: npm install -g @github/copilot
+      workingDir: $PROJECTS_ROOT
 events:
   postStart:
     - install-claude
+    - install-gh-copilot
 attributes:
   .vscode/extensions.json: |
     {
