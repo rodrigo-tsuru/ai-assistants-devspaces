@@ -4,27 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/devfile/universal-developer-image:latest
+      image: rodrigotsuru/aidlc:latest
       memoryLimit: 4096Mi
       mountSources: true
-commands:
-  - id: install-claude
-    exec:
-      component: tools
-      commandLine: npm install -g @anthropic-ai/claude-code
-      workingDir: $PROJECTS_ROOT
-  - id: install-gh-copilot
-    exec:
-      component: tools
-      commandLine: npm install -g @github/copilot
-      workingDir: $PROJECTS_ROOT
-  - id: install-ai-dlc
-    exec:
-      component: tools
-      commandLine: curl -fsSL https://github.com/awslabs/aidlc-workflows/releases/latest/download/install.sh | sh
-      workingDir: $PROJECTS_ROOT
-events:
-  postStart:
-    - install-claude
-    - install-gh-copilot
-    - install-ai-dlc
+
