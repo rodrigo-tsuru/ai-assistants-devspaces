@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: rodrigotsuru/aidlc:latest
+      image: rodrigotsuru/aidlc:1.0.0
       memoryLimit: 4096Mi
       mountSources: true
 
