@@ -7,4 +7,17 @@ components:
       image: rodrigotsuru/aidlc:1.0.1
       memoryLimit: 4096Mi
       mountSources: true
+      env:
+        - name: COPILOT_OTEL_ENABLED
+          value: "true"
+        - name: COPILOT_OTEL_ENDPOINT
+          value: "https://us.cloud.langfuse.com/api/public/otel"   # ou us./jp.cloud.langfuse.com
+        - name: COPILOT_OTEL_PROTOCOL
+          value: "http"            # Langfuse não aceita gRPC
+        - name: OTEL_SERVICE_NAME
+          value: "copilot-chat"
+        - name: OTEL_RESOURCE_ATTRIBUTES
+          value: "team.id=hercules,aidlc.harness=copilot"
+        - name: COPILOT_OTEL_CAPTURE_CONTENT
+          value: "false"
 
